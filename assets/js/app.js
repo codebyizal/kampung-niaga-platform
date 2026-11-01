@@ -147,3 +147,26 @@ document.addEventListener('DOMContentLoaded', function() {
         teksLokasi.innerHTML = `<i class="fa-solid fa-location-dot me-1"></i>Dikirim ke : <a href="javascript:void(0)" onclick="bukaLokasi()">${lokasi.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;')}</a>`;
     }
 });
+
+function bukaMenuMobile() {
+    const sidebar = document.getElementById('mobileMenuSidebar');
+    const overlay = document.getElementById('mobileMenuOverlay');
+
+    if (!sidebar || !overlay) return;
+
+    sidebar.classList.add('active');
+    overlay.classList.add('active');
+    document.body.classList.add('mobile-menu-open');
+}
+
+function tutupMenuMobile() {
+    const sidebar = document.getElementById('mobileMenuSidebar');
+    const overlay = document.getElementById('mobileMenuOverlay');
+
+    if (!sidebar || !overlay) return;
+
+    sidebar.classList.remove('active');
+    overlay.classList.remove('active');
+    document.body.classList.remove('mobile-menu-open');
+}
+
